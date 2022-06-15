@@ -38,6 +38,5 @@ def main():
     print()
 
 
-if __name__ == '__main__': main()
-
-WHY IS THIS HAPPENING ????
+if __name__ == '__main__':
+    main()
