@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-4-objectData</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>9-4-objectData</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p> &emsp;It is common practice not to change <code class="bv"><span class="ldb">self</span>.<span class="lb">_variable </span></code> with <code>=</code>, 
+                <br> instead, 
+                 use functions within classes to change the parameters
+                <br> Doing it with an = sign will not affect declared class within a variable</p>
+                <h2>Class variable vs Object variable</h2>
+                <p>&emsp;Object variables are defined in methods, while <br> Class variables are defined in the class alone 
+                for example <code><span style="border: 2px solid orange">x = [1, 2 ,3]</span></code> </p>
+                <br>
+                <p>We can use assignment operators = with <code class="bv"><span class="ldb">self</span>.<span class="lb">_variables </span></code> </p>
+                <p style="color:red">This is confusing, but if you changes a class variable, <br> it will changed all variables br in the program with the Animal class</p>
+
+        </div>
+        <div class="flex-item">
+            <img tabindex="2" src="images/_variable.png">
+        </div>
+        
+    </div>
+    
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+<span class="b">class</span> Animal: <br>
+&emsp;&emsp;&emsp;<span class="b">def</span> __init__(<span class="lb">self</span>, **kwargs) <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="border: 2px solid orange">x = [1, 2 ,3]</span> <br>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = kwargs[<span class="o">'type'</span>] <span class="b">if</span> <span class="o">'type'</span> <span class="b">in</span> kwargs <span class="b">else</span> <span class="o">"Rooster"</span><br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_name</span> = kwargs[<span class="o">'name'</span>] <span class="b">if</span> <span class="o">'name'</span> <span class="b">in</span> kwargs <span class="b">else</span> <span class="o">'Larry'</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_sound</span> = kwargs[<span class="o">'sound'</span>] <span class="b">if</span> <span class="o">'sound'</span> <span class="b">in</span> kwargs <span class="b">else</span> <span class="o">"coo coo"</span>
+<br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> type(<span class="lb">self</span>, <span class="lb">t</span> = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="lb"></span> <span class="lb">t</span>: <span class="ldb">self</span>.<span class="lb">_type</span> = <span class="lb">t</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="ldb">self</span>.<span class="lb">_type</span> <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> name(<span class="ldb">self</span>,<span class="lb"> n </span> = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> n: <span class="ldb">self</span><span class="lb">_name</span> = n <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return: <span class="ldb">self</span>.<span class="lb">name</span> <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> sound(<span class="ldb">self</span>,<span class="lb">s</span> = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> s: <span class="ldb">self</span>.<span class="lb">_sound</span> = s <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="ldb">self</span>.<span class="lb">_sound</span> <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> __str__(<span class="ldb">self</span>): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="r">f</span><span class="o">"</span>The {<span class="lb">self.type()</span>} named {<span class="lb">self.name()</span>} says {<span class="lb">self.sound()</span> }" <br>
+<br>
+<span class="b">def</span> main(): <br>
+&emsp;&emsp;&emsp;<span class="lb">a0</span> = <span class="lb">Animal</span>(type = "Dog", name = "Skippy", sound = "woof") <br>
+&emsp;&emsp;&emsp;<span class="lb">a1</span> = <span class="lb">Animal</span>() <br>
+&emsp;&emsp;&emsp;print(a0) <br>
+<span style="text-decoration: line-through;";" class="bv">a1._sound =</span> <br>
+&emsp;&emsp;&emsp;<span class="bv"><span class="lb">a1</span>.<span class="lb">sound</span>(<span class="o">"Quack"</span>)</span> <br>
+&emsp;&emsp;&emsp;print(a1) <br>
+if __name__ == '__main__':
+    main()
+            </code>
+        </div>
+    </div>
+    
+    <footer tabindex="2"></footer>
+    
+</body>
+</html>

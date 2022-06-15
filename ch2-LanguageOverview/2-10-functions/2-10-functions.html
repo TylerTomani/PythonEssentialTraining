@@ -1,0 +1,143 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2-10-functions</title>
+        <link rel="stylesheet" href="../../css/lesson.css">
+    </head>
+    <body>
+        <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+        <h1>2-10-functions</h1>
+        <p>If a function has arguments and none are provided, an error will occur.</p>
+        <p>To prevent this, provide a default value</p>
+        <br><hr><br>
+        <div class="flex-container">
+            <div class="flex-item">
+                <code>
+                    <span class="ldb">def</span> function1(<span class="lb">n</span> = 1): <br>
+                    &emsp;&emsp;&emsp;print(<span class="lb">n</span>) <br>
+                    <span class="lb">function1</span>() <br> 
+                    <span class="lb">function1</span>(10)
+                </code>
+                <div class="result">
+                    <h3>Result:</h3>
+                    <code>1 <br>10</code>
+                </div>
+            </div>
+        </div>
+            <br><hr><br>
+            <p>All functions return a value, so we can assign functions as a value to a variable</p>
+            <code>
+                <span class="lb">x</span> = <span class="lb">function</span>(42)
+            </code>
+            <p>But if a function is assigned to a variable it needs a return statement</p>
+            <br><hr><br>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <code>
+                        <span class="ldb">def</span> function1(<span class="lb">n</span> = 1): <br>
+                        &emsp;&emsp;&emsp;print(<span class="lb">n</span>) <br>
+                        <span class="lb">x</span> = <span class="lb">function1</span>(42) <br>
+                        <span class="lb">function1</span>(<span class="lb">x</span>)
+                    </code>
+                    <div class="result">
+                        <h3>Result</h3>
+                        <code>42 <br> None</code>
+                        <p>None is returned in python when there is no return value 
+                            <br> in a function assigned to a variable</p>
+                    </div>
+                </div>
+                <div class="flex-item">
+                    <code>
+                    <span class="ldb">def</span> function1(n = 1): <br>
+                    &emsp;&emsp;&emsp;print(n) <br>
+                    &emsp;&emsp;&emsp;<span class="ldb">return</span> n * 2 <br>
+                    <span class="db">x</span> = <span class="lb">function1</span>(42) <br>
+                    print(<span class="lb">x</span>)
+                    </code>
+                    <div class="result">
+                        <h3>Result:</h3>
+                            <code>42 <br> 84</code></code>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+            
+<br><hr><br>
+<div class="flex-container">
+    <div class="flex-item">
+                    <h2>isPrime example</h2>
+                    <code>
+
+<span class="ldb">def</span> isPrime(n): <br>
+&emsp;&emsp;&emsp;if n &lt;= 1: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return False <br>
+&emsp;&emsp;&emsp;for x in range(2, n): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if n % x == 0: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return False <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;else: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return True <br>
+<br>
+n = 5 <br>
+if (isPrime(n)): <br>
+&emsp;&emsp;&emsp;print(f"{n} is prime") <br>
+else: <br>
+&emsp;&emsp;&emsp;print(f"{n} is not prime") <br>
+
+                    </code>
+
+                </div>
+                <div class="flex-item">
+                    <h2>List of prime numbers</h2>
+                    <p> The print statement
+                        <br> <code class="bv">print(n, end=' ', flush=True)</code>
+                    <br>will seperate output with spaces instead of new lines, <br>
+                     which are default</p>
+                     <br><hr>
+                    <code>
+
+<span class="ldb">def</span> isPrime(n): <br>
+&emsp;&emsp;&emsp;if n &lt;= 1: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return False <br>
+&emsp;&emsp;&emsp;for x in range(2, n): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if n % x == 0: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return False <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;else: <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return True <br>
+<br>
+<span class="ldb">def</span> primes(): <br>
+&emsp;&emsp;&emsp;for i in range(100): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if isprime(i): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="bv">print(i, end=' ', flush=True)</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print() <br>
+primes()
+<br>
+
+
+
+
+
+
+
+n = 5 <br>
+if (isPrime(n)): <br>
+&emsp;&emsp;&emsp;print(f"{n} is prime") <br>
+else: <br>
+&emsp;&emsp;&emsp;print(f"{n} is not prime") <br>
+
+                    </code>
+
+                </div>
+                
+            </div>
+            
+            
+        
+        
+        
+    </body>
+    </html>

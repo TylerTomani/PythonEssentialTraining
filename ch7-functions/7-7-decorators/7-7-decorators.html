@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-7-decorators</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>7-7-decorators</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Functions are objects, functions can be assigned to variables 
+                <br>and those variables can be called
+            </p>
+            <code>
+                <span class="b">def</span> f1(): <br>
+                &emsp;&emsp;&emsp;print(<span class="o">"This is f1()"</span>) <br>
+                <span class="lb">x</span> = f1 <br>
+                <span class="lb">x</span>()
+            </code>
+        </div>
+        <div class="flex-item">
+            <p>The result will be the same as calling the function</p>
+            <code class="result">
+            This is f1()
+            </code>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>This function has a another function within it known as being "wrapped". 
+                <br> f1() is the wrapper to f2(). To access f2(),
+                <br>we must return it and call the f1 wrapper when declaring it 
+                <br>in a variable
+            </p>
+            <br>
+        </div>
+    </div>
+    
+    <div class="flex-container">
+        <div class="flex-item">
+            <code tabindex="2">
+                <span class="b">def</span> f1(): <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> f2(): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"This is f2"</span>) <br>
+                &emsp;&emsp;&emsp;return <span class="lb">f2</span> <br>
+                <br>
+                <span class="lb">x</span>= <span class="bv">f1()</span> <br>
+                <span class="lb">x</span>()
+            </code>
+        </div>
+        <div class="flex-item">
+            <p></p>
+            <code class="result">
+            This is f2()
+            </code>
+        </div>
+    </div>
+    <hr>
+    <br>
+    <h2>This is intersting</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Note what happens when function are passed to functions, and their behavior <br>
+            outside the scope of the wrappers</p>
+            <code tabindex="2">
+                <span class="b">def</span> f1(<span class="lb">f</span>): <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> f2(): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"before function call"</span>) <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="lb">f</span>() <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"after function call"</span>) <br>
+                &emsp;&emsp;&emsp;return f2 <br>
+                <span class="b">def</span> f3(): <br>
+                &emsp;&emsp;&emsp;print(<span class="o">"This is f3()</span>") <br>
+                <span class="lb">x</span> = f1(f3) <br>
+                <span class="lb">x</span>()    
+            </code>
+        </div>
+        <div class="flex-item">
+            <code class="result">
+                before function call <br>
+                this is f3() <br>
+                after function call
+            </code>
+            <p><span class="uv">BUT, if we change x to the variable <code><span class="lb">f3</span></code> and call <code><span class="lb">f3</span></code> </span>
+            <br>the function is no longer available because it becomes recursive</p>
+            <br>
+                <code tabindex="2">
+                    <span class="b">def</span> f1(<span class="lb">f</span>): <br>
+                    &emsp;&emsp;&emsp;<span class="b">def</span> f2(): <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"before function call"</span>) <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="lb">f</span>() <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"after function call"</span>) <br>
+                    &emsp;&emsp;&emsp;return f2 <br>
+                    <span class="b">def</span> f3(): <br>
+                    &emsp;&emsp;&emsp;print(<span class="o">"This is f3()</span>") <br>
+                    <span class="bv"><span class="lb">f3</span> = f1(f3) <br></span>
+                    <span class="bv"><span class="lb">f3</span>()    </span>             
+                </code>
+            <p>this will produce the same result</p>
+            <p>Instead of doing the process of <span class="lb">f3</span> = f1(f3) and then
+            <br> <span class="lb">f3</span>() we can make it recursive in one step </p>
+        </div>
+        
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code tabindex="2">
+                <span class="b">def</span> f1(<span class="lb">f</span>): <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> f2(): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"before function call"</span>) <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="lb">f</span>() <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="o">"after function call"</span>) <br>
+                &emsp;&emsp;&emsp;return f2 <br>
+                <span class="bv">@f1</span> <br>
+                <span class="b">def</span> f3(): <br>
+                &emsp;&emsp;&emsp;print(<span class="o">"This is f3()</span>") <br>
+                <span class="lb">f3</span>() 
+            </code>
+        </div>
+        <div class="flex-item">
+            <p>Placing the <code>@f1</code> before the f3 defintion, makes f3 recursive, so calling f3 
+            will really call f1!!</p>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

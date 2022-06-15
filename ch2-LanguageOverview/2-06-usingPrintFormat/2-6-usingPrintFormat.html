@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-6-usingPrintFormat</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h2>2-6-usingPrintFormat</h2>
+    <h3>.format</h3>
+    <p>This is an easy way of inputing variables, another way would be using</p>
+    <ul>
+        <li style="font-size: 1.2rem;">print(<span class="r">f</span>" ${enter variable}")</li>
+    </ul>
+    <br><hr> <br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">x</span> = 42 <br>
+                print('The number {}'.<span class="lb">format</span>(<span class="lb">x</span>))
+            </code>
+        </div>
+        <div class="result">
+            <h3>Result</h3>
+            <code>
+                The number 42
+            </code>
+        </div> 
+    </div>
+    <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>or you can do the following for the same result</p>
+            <div class="flex-item">
+                <code>
+                    <span class="lb">x</span> = 42 <br>
+                    print(<span class="r">f</span>'The number {<span class="lb">x</span>}')
+                </code>
+            </div>
+        </div> 
+    </div>
+    <br><hr><br>
+    <p>.format is a method of the string object</p>
+    <p>So, we can place a string and this method within a variable</p>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+            <span class="lb">x</span> = 2 <br>
+            <span class="lb">s</span> = <span class="o">"Hello, There {}"</span>.<span class="lb">format(x)</span> <br>
+            print(s)
+            </code>
+        </div>
+        <div class="result">
+            <h3>Result</h3>
+            <code>Hello, There 42</code>
+        </div>
+        
+    </div>
+    <br><hr><br>
+    <h2>Python2</h2>
+    <p>prints works different</p>
+    <code>
+        print("Hello Number %d" % 42)
+    </code>
+    
+    
+    
+    
+    
+</body>
+</html>

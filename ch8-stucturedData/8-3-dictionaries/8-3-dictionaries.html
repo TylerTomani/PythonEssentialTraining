@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-3-dictionaries</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>8-3-dictionaries</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Here are the two ways to unpack a list 
+                <br> the results are the same
+            </p>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;animals = dict(cow="moo", cat="meow", dog="wood", lion="grr") <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="lb">for</span> i in animals: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="r">f</span><span class="o">"{<span class="lb">animals</span>[i]: [i]</span>")
+                <br> <br>
+                &emsp;&emsp;&emsp;<span class="lb">for</span> k,v in animals.<span class="bv">index()</span>: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="r">f</span><span class="o">"{<span class="lb">k</span>}: {<span class="lb">v</span>}"</span>)
+            </code>
+        </div>
+        <div class="flex-item">
+            <code class="result">
+moo: cow <br> 
+meow: cat <br> 
+wood: dog <br> 
+grr: lion <br> 
+cow : moo <br>
+cat : meow <br>
+dog : wood <br>
+lion : grr <br>
+            </code>
+        </div>
+        
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Returning just keys</h2>
+            <p>Do this to return just the keys</p>
+            <br>
+            <code>
+                <span class="lb">for</span> k in animals.<span class="bv">keys()</span>:
+            </code>
+        </div>
+        <div class="flex-item">
+            <h2>Returning just values</h2>
+            <p>Do this to return just the values</p>
+            <br>
+            <code>
+                <span class="lb">for</span> k in animals.<span class="bv">values()</span>:
+            </code>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

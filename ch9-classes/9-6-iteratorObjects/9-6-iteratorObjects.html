@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-6-iteratorObjects</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>9-6-iteratorObjects</h1>
+    <p>An iterator is a class that provides a sequence of items</p>
+    <p><span class="r">NOT WORKING,</span> WHY </p>
+    <pre style="font-size: 1.1rem;">
+#!/usr/bin/env python3
+
+class inclusive_range:
+    def __init__(self, *args):
+        numargs = len(args)
+        self._start = 0
+        self._step = 1
+    if numargs &LT; 1:
+        raise TypeError(f'At lease 1 argument needed, {numargs} received')
+    elif numargs == 1:
+        self._stop = args[0]
+    elif numargs == 2:
+        (self._start, self._stop) = args
+    elif numargs == 3:
+        (self._start, self._stop, self._step) = args
+    else:
+        raise TypeError(f"expected 3 args maximun, recieved {numargs}")
+
+        self._next = self._start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self._next &GT; self.stop:
+            raise StopIteration
+        else:
+            _r = self.__next
+            self._next += self._step
+            return r
+
+
+def main():
+    for n in inclusive_range(25):
+        print(n, end=" ")
+    print()
+
+
+if __name__ == '__main__':
+    main()
+
+    </pre>
+<footer tabindex="2"></footer>
+</body>
+</html>

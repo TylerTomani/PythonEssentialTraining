@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-5-whiteSpaceComments</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+    
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>2-5-whiteSpaceComments</h1>
+    <br>
+<p>Whatever code is outside of main will be called first, then anything in main will run</p> 
+<br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code >
+                #!/usr/bin/env python3 <br><br>
+                <span class="ldb">import</span> <span class="lb">platform</span> <br>
+                <br>
+                <span class="ldb">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">message()</span> <br>
+                <br>
+                <span class="ldb">def</span> message():<br>
+                &emsp;&emsp;&emsp;print('<span class="o">This is python version {}</span>'.<span class="ldb">format(platform.python_version())</span>)<br>
+                &emsp;&emsp;&emsp;print('line 2') <br>
+                print('line 3')
+                <br> <br>
+                <span class="ldb">if</span> __name__ == <span class="o">"__main__"</span>: <br>
+                &emsp;&emsp;&emsp;<span class="lb">main()</span>     
+            </code>
+        </div>
+        <div class="result">
+            <h2>Result</h2>
+            <code>
+                line 3 <br>
+                This is python version 3.10.2 <br>
+                line 2
+            </code>
+            <p>notice how <code>line 3</code> prints 1st</p>
+        </div> 
+    </div>
+    
+    
+</body>
+</html>

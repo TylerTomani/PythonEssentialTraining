@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-4-additionalCntrl</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+    
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>6-4-additionalCntrl</h1>
+    <ul>
+        <li><code>continue</code></li>
+        <li><code>break</code></li>
+        <li><code>else </code></li>
+    </ul>
+    <p style="color:red ">I don't understand continue</p>
+    <p>ALl it does is skip whatever condition specified and continues  the loop</p>
+    <br> <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">secret = </span> <span class="o">"dee"</span> <br>
+                <span class="lb">pw</span> = '' <br>
+                <span class="lb">auth</span> = False <br>
+                <span class="lb">count</span> = 0 <br>
+                <span class="lb">max_attempts</span> = 4 <br>
+                <br>
+                <span class="ldb">while</span> pw != secret: <br>
+                &emsp;&emsp;&emsp;<span class="lb">count</span>+= 1 <br>
+                &emsp;&emsp;&emsp;pw = input(f"{4 - count} trys left. Enter Password: ") <br>
+                &emsp;&emsp;&emsp;<span class="ldb">if</span> count == max_attempts: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;break <br>
+                <span class="ldb">else</span>: <br>
+                auth = <span class="b">True</span> <br>
+                print(<span class="o">"Authorized"</span> if auth else <span class="o">"Authorized Failed Password"</span>)
+                
+                
+            
+                
+            </code>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

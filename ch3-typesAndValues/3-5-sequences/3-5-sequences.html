@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-5-sequences</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>3-5-sequences</h1>
+    <h2>Arrays, Tuples, range and Dictionaries</h2>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h3>Array</h3>
+            <code>
+                <span class="lb">x</span> = [1, 2, 3, 4, 5] <br>
+                <span class="lb">x</span>[1] = 42 <br>
+                <span class="ldb">for</span> i in x: <br>
+                &emsp;&emsp;&emsp;print("i = {}".<span class="lb">format</span>(i))
+                
+
+            </code>
+        </div>
+        <div class="flex-item">
+            <h3>Tuples () - immutable</h3>
+            <code>
+                <span class="lb">x</span> = (1, 2, 3, 4, 5) <br>
+                <span style="text-decoration: line-through;"> <span class="lb">x</span>[1] = 42 (Wont work) <br></span>
+                <span class="ldb">for</span> i in x: <br>
+                &emsp;&emsp;&emsp;print("i = {}".<span class="lb">format</span>(i))
+            </code>
+        </div>
+    </div>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h3>Fill variable with range</h3>
+            <code>
+                <span class="lb">x</span> = <span class="lb">range</span>(5) <br>
+                <span class="ldb">for</span> i in x: <br>
+                &emsp;&emsp;&emsp;print("i = {}".<span class="lb">format</span>(i))
+            </code>
+        </div>
+        <div class="flex-item">
+            <h3>range and step</h3>
+            <p>range goes from 5 to 50, in increments of 5</p>
+            <code>
+                <span class="lb">x</span> = <span class="lb">range</span>(5,50,5) <br>
+                <span class="ldb">for</span> i in x: <br>
+                &emsp;&emsp;&emsp;print(f"i: {i}", end=" ", flush=True)
+                
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>i: 5 i: 10 i: 15 i: 20 i: 25 i: 30 i: 35 i: 40 i: 45</code>
+            </div>     
+        </div>
+    </div>
+    <br><hr><br>
+    <h2>Ranges are immutable</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>But you can alter this by putting the range in a list function</p>
+            <code>
+                <span class="lb">x</span> = <span class="lb">list</span>(range(4)) <br>
+                <span class="lb">x[1]</span> = 99 <br>
+                <span class="lb">for</span> i in x: <br>
+                &emsp;&emsp;&emsp;print(f"i : {i}")
+            </code>
+        </div>
+        <div class="result">
+            <h3>Result</h3>
+            <code>
+                i: 0 <br>
+                i: 99 <br>
+                i: 2
+                i: 3
+            </code>
+        </div>
+    </div>
+    <br><hr><br>
+    <h2>Dictionaries</h2>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Dicitonaries are made of key value pairs</p>
+            <p>This will only return the key</p>
+            <code tabindex="2">
+                <span class="lb">dict</span> = ['one': 1, 'two': 2,'three': 3,'four': 4] <br>
+                <span class="lb">for</span> i in dict:
+                &emsp;&emsp;&emsp;print("i {}".<span class="lb">format</span>(i))
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>
+                    i: one <br>
+                    i: two <br>
+                    i: three <br>
+                    i: four <br>
+                </code>
+            </div>
+        </div>
+        <div class="flex-item">
+            <br>
+            <p>To get key and value do the following</p>
+            <code tabindex="2">
+                <span class="lb">dict</span> = ['one': 1, 'two': 2,'three': 3,'four': 4] <br>
+                <span class="lb">dict['four']</span> = 99 <br>
+                <span class="lb">for</span> k, v in dict.<span class="lb">items</span>(): <br> 
+                &emsp;&emsp;&emsp;print("key: {k} value: {}".<span class="lb">format</span>(k,v))         
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code tabindex="2">
+                    key: one value: 1 <br>
+                    key: two value: 2 <br>
+                    key: three value: 3 <br>
+                    key: four value: 99 <br>
+                </code>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</body>
+</html>

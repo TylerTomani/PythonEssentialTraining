@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-4-sets</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>8-4-sets</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p><code><span class="b">set</span> will return any non duplicated character</code></p>
+            <br>
+            <p>Each the type this script runs it will return the character in a different order
+               <br> if you want them in order just sort them <br> <code>printSet(sorted(a))</code>
+            </p>
+            <br>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">a</span> = set("We're going to need a string") <br>
+                &emsp;&emsp;&emsp;<span class="lb">b</span> = set("Sorry Dave can't do that") <br> 
+                &emsp;&emsp;&emsp;print(<span class="lb">a</span>) <br>
+                &emsp;&emsp;&emsp;print(<span class="lb">b</span>) <br>
+                &emsp;&emsp;&emsp;printSet(<span class="lb">a</span>) <br>
+                <br>
+                <span class="b">def</span> printSet(s): <br>
+                &emsp;&emsp;&emsp;for i in s: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(i, end=" ", flush=True) <br>
+                if __name__ == '__main__': <br>
+                    main()                
+            </code>
+        </div>
+        <div class="flex-item">
+            <code class="result">
+{'b', 'e', 'g', 's', 'd', 'n', 'a', 'i', 'o', ' ', 'W', 'r', "'", 't'} <br>
+{'c', 'e', 'D', 'y', 's', 'd', 'n', 'a', 'h', 'o', ' ', 'v', 'r', "'", 't'} <br>
+b e g s d n a i o   W r ' t %      <br>
+            </code>
+        </div>
+        
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>compare which charcters are in a but not in b</p>
+            <code>
+                printSet(<span class="lb">a - b</span>)
+            </code> <br> <br>
+            <p>find characters that are in a or b</p> 
+            <code>
+                printSet(<span class="lb">a | b</span>)
+            </code>
+            <br> <br>
+            <p>find characters that are in a and b but not both</p> 
+            <code>
+                printSet(<span class="lb">a ^ b</span>)
+            </code>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

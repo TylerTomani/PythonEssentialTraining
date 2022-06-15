@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-2-functionsArgs</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>7-2-functionsArgs</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>integer variables are <q>non muttable</q> interges from one variable assigned to another, <br>
+                will have the same id</p>
+        <br><hr>                
+                <code>
+                    <span class="b">def</span> main(): <br>
+                    &emsp;&emsp;&emsp;<span class="lb">x</span> = 20 <br>
+                    &emsp;&emsp;&emsp;print(<span class="r">f</span>"main() x value: {x}") <br>
+                    &emsp;&emsp;&emsp;print(<span class="r">f</span>"main() x id: {<span class="lb">id</span>(x)}") <br>
+                    &emsp;&emsp;&emsp;f1(x) <br>
+                    <span class="b">def</span> f1(n): <br>
+                    &emsp;&emsp;&emsp;<span class="lb">x</span> = n <br>
+                    &emsp;&emsp;&emsp;<span class="lb">x</span> = 20 <br>
+                    &emsp;&emsp;&emsp;print(<span class="r">f</span>"f1() x value: {x}") <br>
+                    &emsp;&emsp;&emsp;print(<span class="r">f</span>"f1() x id: {<span class="lb">id</span>(x)}") <br>
+                    <br>
+                    if __name__ == <span class="o">'__main__'</span>:
+                        main()
+                    
+                </code>
+        </div>
+        <div style="min-width:500px;" class="result">
+            <code style="padding:1rem">
+    main() x value: 20 <br>
+    main() x id: <span class="bv">4373644112</span> <br>
+    f1() x value: 20 <br>
+    f1() x id: <span class="bv">4373644112</span> <br>
+            </code>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>to change this behavior make put x into a list,dictionary, or array. This will convert the value to a new id</p>
+        </div>
+    </div>
+    
+    
+
+    
+    
+</body>
+</html>

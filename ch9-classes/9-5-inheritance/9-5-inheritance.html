@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-5-inheritance</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>9-5-inheritance</h1>
+    <p>the exceptions will return if no value is provided and this pages shows how to use parent classes to create other classes, by <br>
+    passing a class as a parameter to another class and refereing to the parent class as <code class="bv">super()</code></p>
+    <br><code class="bv"><span class="b">class </span>className(<span class="lb">ParentClass</span>):</code>
+    <br><br> <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+<span class="b">class</span> Animal: <br>
+&emsp;&emsp;&emsp;def __init__(<span class="ldb">self</span>,**kwargs): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="o">'type'</span> <span class="b">in</span> kwargs: <span class="ldb">self</span>.<span class="lb">_type</span> = kwargs[<span class="o">'type</span>'] <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="o">'name'</span> <span class="b">in</span> kwargs: <span class="ldb">self</span>.<span class="lb">_name</span> = kwargs[<span class="o">'name'</span>] <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="o">'sound'</span> <span class="b">in</span> kwargs: <span class="ldb">self</span>.<span class="lb">_sound</span> = kwargs[<span class="o">'sound'</span>] <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> type(<span class="ldb">self</span>, t = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> t: <span class="ldb">self</span>.<span class="lb">_type</span> = t <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">try</span>: return <span class="ldb">self</span>.<span class="lb">_type</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">except</span> <span class="ldb">AttributeError</span>: return None <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> name(<span class="ldb">self</span>, n = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> n: <span class="ldb">self</span>.<span class="lb">_name</span> = n <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">try</span>: return <span class="ldb">self</span>.<span class="lb">_name</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">except</span> <span class="lb">AttributeError</span>: return None <br> 
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> sound(<span class="ldb">self</span>, s = None): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> s: <span class="ldb">self</span>.<span class="lb">_sound</span> = s <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">try</span>: return <span class="ldb">self</span>.<span class="lb">_sound</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">except</span> <span class="lb">AttributeError</span>: return None <br>
+<br>
+&emsp;&emsp;&emsp;<span class="b">def</span> __str__(<span class="ldb">self</span>): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="r">f</span><span class="o">"The {<span class="ldb">self</span>.<span class="lb">type()</span>} named {<span class="ldb">self</span>.<span class="lb">name()</span>} makes a {<span class="ldb">self</span>.<span class="lb">sound()</span>} sound" </span> <br>
+<br> 
+<span class="bv"><span class="b">class </span> Duck(<span class="lb">Animal</span>):</span> <br>
+&emsp;&emsp;&emsp;<span class="b">def</span> __init__(<span class="ldb">self</span>, **kwargs): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = <span class="o">'Duck'</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="o">'type'</span> in kwargs: <span class="b">del</span> kwargs[<span class="o">'type'</span>] <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span style="border-width: 2px;padding:1px 0;" class="bv"><span class="ldb">super()</span>.<span class="lb">__init__</span></span>(**kwargs) <br>
+<br>
+<span class="b">class</span> Kitten(<span class="lb">Animal</span>): <br>
+&emsp;&emsp;&emsp;<span class="b">def</span> __init__(<span class="ldb">self</span>, **kwargs): <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = <span class="o">"Kitten"</span> <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="b">if</span> <span class="o">'type'</span> in kwargs: <span class="b">del</span> kwargs[<span class="o">'type'</span>] <br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="lb">super()</span>.<span class="lb">__init__</span>(**kwargs) <br>
+<br>
+<span class="b">def</span> main(): <br>
+&emsp;&emsp;&emsp;<span class="lb">a0 </span> = Animal(type = 'Dog', name = 'Doug', sound = 'bark bark') <br> 
+&emsp;&emsp;&emsp;<span class="lb">a1</span> = Duck() <br>
+&emsp;&emsp;&emsp;print(a0) <br>
+&emsp;&emsp;&emsp;print(a1) <br>
+<br>
+if __name__ == '__main__':
+    main()
+            </code>
+        </div>
+    <div class="flex-item">
+        <h2>returns</h2>
+        <code class="result">
+The Dog named Coco makes a bark sound <br>
+The Duck named None makes a None sound
+        </code>
+    </div>
+    
+    </div>
+    <img tabindex="2" src="images/revStr.png">
+    <footer tabindex="2"></footer>
+    
+    
+    
+</body>
+</html>

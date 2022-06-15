@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-3-numbersProblem</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>3-3-numbersProblem</h1>
+    <p>Here are two interesting occurances when working with python</p>
+    <p>When the answer is a float when working with division,
+        <br> you get the remainder as a decimal</p>
+        <br><hr>
+    <div class="flex-container">
+        <div class="flex-item">
+                <code>
+                    <span class="lb">x</span> = 7 / 3 <br>
+                    print(<span class="lb">x</span>)
+                </code>
+                <div class="result">
+                    <h3>Result</h3>
+                    <code>2.3333333333333335</code>
+                </div>
+            </div>
+            <div class="flex-item">
+                <p>But, you can round division with two //</p>
+                <code>
+                    <span class="lb">x</span> = 7 // 3
+                    print(<span class="lb">x</span>)
+                </code>
+                <div class="result">
+                    <h3>Result</h3>
+                    <code>2</code>
+                </div>
+            </div>
+    </div>
+    <br> <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Problem with 0</h2>
+            <p>A problem occurs when using floats getting an answer of 0</p>
+            <p>You would suspect 0, and a type of int, but this is not what happens</p>
+            <code>
+                <span class="lb">x</span> = .1 + .1 + .1 - .3 <br>
+                print(<span class="lb">x</span>) <br>
+                print(<span class="lb">type(x)</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code> 5.551115123125783e-17 <br>
+                    &lt;class 'float'></code>
+            </div>
+        </div>
+        <div class="flex-item">
+            <p>This becomes problematic when working with money</p>
+            <p>we don't want to use floating point when calculating money</p>
+            <p>To solve this problem import the module decimal</p>
+            <code><span class="ldb">from</span> <span class="lb">decimal</span> <span class="ldb">import</span> <span class="lb">*</span></code>
+            <p>This states from the decimal module import everything </p>
+            <p>So the code will look like this at produce the correct result</p>
+            <code>
+                <span class="ldb">from</span> <span class="lb">decimal</span> <span class="ldb">import</span> <span class="lb">*</span> <br>
+                <br>
+                <span class="lb">a</span> = <span class="lb">Decimal</span>(<span class="o">'.10'</span>) <br>
+                <span class="lb">b</span> = <span class="lb">Decimal</span>(<span class="o">'.30'</span>) <br>
+                <span class="lb">x</span> = a + a + a - b
+                print(<span class="lb">x</span>) <br>
+                print(<span class="lb">type(x)</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>0.00 <br>
+                    &lt;class 'decimal.Decimal'></code>
+            </div>
+
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-11-objects</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>2-11-objects</h1>
+    <p>In python, a <q>Class</q> is a defintion and a <q>Object</q> is an instance of a Class</p>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                #!/usr/bin/env python3 <br>
+                <span class="ldb">class</span> <span class="o">Duck</span>: <br>
+                &emsp;&emsp;&emsp;<span class="ldb">def</span> <span class="o">quack</span>(<span class="lb">self</span>): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print("quaaack") <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="ldb">def</span> <span class="o">walk</span>(<span class="lb">self</span>): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print("walks like a duck") <br>
+                <span class="ldb">def</span> main(): <br>
+                &emsp;&emsp;&emsp;donald = Duck() <br>
+                &emsp;&emsp;&emsp;donald.quack() <br>
+                &emsp;&emsp;&emsp;donald.walk() <br>
+                <br>
+                if __name__ == "__main__":
+                &emsp;&emsp;&emsp;main()                                                                                                         
+            </code>
+        </div>
+        <div class="result">
+            <h3>Result:</h3>
+            <code>quaaack <br> walks like a duck</code>
+        </div>
+    </div>
+    <br><hr><br>
+    <p>In order to use variables within a class, in the class, refer to self</p>
+    <br><hr>
+    <div class="flex-container">
+        <div class="flex-item">
+       <code>
+        <span class="ldb">class</span> <span class="o">Duck</span>: <br>
+        &emsp;&emsp;&emsp;<span class="lb">sound</span> = "quacck"<br>
+        &emsp;&emsp;&emsp;<span class="lb">walking</span> = "walks like a duck"
+        <br>
+        &emsp;&emsp;&emsp;<span class="ldb">def</span> <span class="o">quack</span>(<span class="lb">self</span>): <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="lb">self.sound</span>) <br>
+        <br>
+        &emsp;&emsp;&emsp;<span class="ldb">def</span> <span class="o">walk</span>(<span class="lb">self</span>): <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="lb">self.walking</span>) <br>
+        <span class="ldb">def</span> main(): <br>
+        &emsp;&emsp;&emsp;donald = Duck() <br>
+        &emsp;&emsp;&emsp;donald.quack() <br>
+        &emsp;&emsp;&emsp;donald.walk() <br>
+        <br>
+        if __name__ == "__main__":
+        &emsp;&emsp;&emsp;main()                                                                                                         
+    </code>
+       </code>     
+        </div>
+        
+    </div>
+    
+    
+    
+    
+</body>
+</html>

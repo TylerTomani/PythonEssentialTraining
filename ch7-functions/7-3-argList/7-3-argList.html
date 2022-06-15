@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-3-argList</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>7-3-argList</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>use the the convention<span class="code bv">*args</span> to pass in all of the arguments from list
+            <br>the <span class="code">if</span> statement inside kitten checks if args is 0 or not</p>
+            <br> <hr>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">kittens</span>("meow","grr","prr") <br>
+                &emsp;&emsp;&emsp;<span class="lb">kittens</span>() <br>
+
+                <br>
+                <span class="b">def</span> kitten(<span class="bv">*args</span>): <br>
+                &emsp;&emsp;&emsp;<span class="lb">if</span> (args): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for i in args: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="lb">i</span>) <br>
+                &emsp;&emsp;&emsp;<span class="lb">else</span>: print(<span class="o">"MEOW"</span>)
+                <br> <br>
+                if __name__ == '__main__':
+                    main()         
+            </code>
+        </div>
+        <div class="result">
+            <h3>result</h3>
+            <code>
+                meow <br>grr <br>prr <br> MEOW
+            </code>
+        </div>
+    </div>
+    <br><hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>You can assigne a list to a variable and pass the list into a function using a <span class="code">*</span> before the variable</p>
+            <p>This will provide the same result as abve</p>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">x</span> = ("meow","grr","prr")  <br>
+                &emsp;&emsp;&emsp;<span class="lb">kittens</span>(<span class="bv">*<span class="lb">x</span></span>) <br>
+
+                <br>
+                <span class="b">def</span> kitten(*args): <br>
+                &emsp;&emsp;&emsp;<span class="lb">if</span> (args): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for i in args: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="lb">i</span>) <br>
+                &emsp;&emsp;&emsp;<span class="lb">else</span>: print(<span class="o">"MEOW"</span>)
+                <br> <br>
+                if __name__ == '__main__':
+                    main()         
+            </code>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

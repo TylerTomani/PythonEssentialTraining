@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-2-constructObj</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>9-2-constructObj</h1>
+    <p><span><span class="r">Important Note, printing out classes with print does not word, never mind , becuase the class is only returning not printing</span></span></p>
+    <div class="flex-container">
+        <div class="flex-item">    
+            <h2>__init__</h2>
+            <br>
+            <p><code><span class="bv" style="padding: .4% .2%;">__init__</span></code> is a special named function that acts as a constructor for classes in python</p>
+            <br>
+            <p> The first arguments is always <span class="ldb">self</span> followed by the initialized variables. Much like this.etc = .. in JS</p>
+        </div>
+        <div class="flex-item">
+            <p>to have the order not matter for the parameters do the following</p>
+        <code>
+            &emsp;&emsp;&emsp;<span class="b">def</span> <span class="bv" style="padding: .2% .1%;">__init__</span>(<span class="ldb">self</span>, <span class="lb">**kwargs</span>): <br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = kwargs['type'] <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_name</span> = kwargs['name'] <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_sound</span> = kwargs['sound'] <br>
+        </code>    
+        <p>If you do this, you must declare as keys in <code>main()</code></p>
+        <code>
+            <span class="b">def</span> main(): <br>
+            &emsp;&emsp;&emsp;<span class="lb">a0</span> = <span class="lb">Animal</span>(type="Kitten",name ="Mittens",sound="meow") <br>            
+        </code>
+        </div>
+        
+    </div>
+    <br> <hr>
+       <div class="flex-container">
+           <div class="flex-item">
+                <code>
+                <span class="b">class</span> Animal: <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> <span class="bv" style="padding: .2% .1%;">__init__</span>(<span class="ldb">self</span>, <span class="ldb">type</span>, <span class="lb">name</span>, <span class="lb">sound</span>): <br>
+                <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = type <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_name</span> = name <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_sound</span> = sound <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> type(<span class="ldb">self</span>): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="ldb">self</span>.<span class="lb">_type</span> <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> name(<span class="ldb">self</span>): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="ldb">self</span>.<span class="lb">_name</span> <br>
+                <br>
+                &emsp;&emsp;&emsp;<span class="b">def</span> sound(<span class="ldb">self</span>): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;return <span class="ldb">self</span>.<span class="lb">_sound</span> <br>
+                <br>
+                <span class="b">def</span> print_animals(o): <br>
+                &emsp;&emsp;&emsp;<span class="lb">if</span> not <span class="lb">isinstance</span>(o,Animal): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">raise</span> <span class="lb">TypeError</span>(<span class="o">'print_animal(): requires an Animal'</span>) <br>
+                &emsp;&emsp;&emsp;<span class="lb">else</span>: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="r">f</span><span class="o">"The {<span class="lb">o._type</span>} named {<span class="lb">o._name</span>} makes a <span class="lb">o._sound</span> sound</span>)
+                <br> <br>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">a0</span> = <span class="lb">Animal</span>("Kitten","Mittens","meow") <br>
+                &emsp;&emsp;&emsp;<span class="lb">a1</span> = <span class="lb">Animal</span>("Dog","Henry","woof") <br>
+                &emsp;&emsp;&emsp;<span class="lb">print_animal</span>(a0) <br>
+                &emsp;&emsp;&emsp;<span class="lb">print_animal</span>(a1) <br>
+                &emsp;&emsp;&emsp;print(<span class="lb">Animal</span>("Cow","Bobby","moo"))
+               <br> <br>
+               if __name__ == '__main__': main() 
+            </code>
+           </div>
+           <div class="flex-item">
+               
+           </div>
+           
+       </div>
+       <hr>
+       <h2 tabindex="2">Default value</h2>
+       <p>to give default values to the parameters do the following</p>
+       <code>
+        &emsp;&emsp;&emsp;<span class="b">def</span> <span class="bv" style="padding: .2% .1%;">__init__</span>(<span class="ldb">self</span>, <span class="lb">**kwargs</span>): <br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_type</span> = kwargs['type'] <span class="lb">if</span> 'type' in <span class="lb">kwargs</span> else <span class="o">'kitten'</span> <br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_name</span> = kwargs['name'] <span class="lb">if</span> 'name' in <span class="lb">kwargs</span> else <span class="o">'Mittens'</span><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="ldb">self</span>.<span class="lb">_sound</span> = kwargs['sound'] <span class="lb">if</span> 'sound' in <span class="lb">kwargs</span> else <span class="o">'meow'</span> <br>
+       </code>
+       <p>If we were to  <code>print_animals(<span class="lb">Animal())</span> the default values would display</code></p>
+       <p><span><span class="r">Important Note, printing out classes with print does not word</span></span></p>
+    
+</body>
+</html>

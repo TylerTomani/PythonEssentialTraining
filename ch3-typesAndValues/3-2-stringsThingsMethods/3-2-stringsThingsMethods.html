@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-2-stringsThingsMethods</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+    <style>
+        pre {
+            font-size: 1.15rem;
+            background: black;
+            color: whitesmoke;
+            font-family: monospace;
+            display: inline-block;
+            margin-top: 1%;
+            padding: 0 2%;
+        }
+    </style>
+    
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>3-2-stringsThingsMethods</h1>
+    <p style="color:red"> <code><span class="lb">format()</span> trick as bottom</code></p>
+    <p>An important note to remember; Triple quotes """ ... """ allow you to print mulitple lines</p>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">str</span> = """ <br> 
+                The Number Seven <br>
+                """ <br>
+                print(str)
+            </code>
+        </div>
+        <div class="result">
+            <h3>Result</h3>
+            <code><br>
+            The&nbsp;Number&nbsp;Seven <br>
+        <br></code>
+        </div>
+    </div>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>There are many string methods, 
+                <br> here are some common ones</p>
+            <ul>
+                <li><code><span class="lb">capitalize</span>()</code></li>
+                <li><code><span class="lb">lower</span>()</code></li>
+                <li><code><span class="lb">upper</span>()</code></li>
+            </ul>
+        </div>
+        <div class="flex-item">
+            <p>You can apply this methods onto strings anywhere. Including when declaring a string</p>
+            <code>
+                str = "Example string".<span class="lb">upper</span>()
+            </code>
+            <p>The same applies to format</p>
+            <code>
+                x = "The numbers {} {}".format(8,9)
+            </code>
+        </div>
+    </div>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">str</span> = <span class="o">"this is a string lowercase"</span> <br>
+                print(<span class="lb">str</span>.<span class="lb">capitalize</span>())
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>This is a string</code>
+            </div>
+        </div>
+        <div class="flex-item">    
+            <p>Remember, you can apply the method in the variable on the string</p>
+            <code>
+                <span class="lb">str</span> = <span class="o">"this is a string".<span class="lb">capitalize</span>()</span><br>
+                print(<span class="lb">str</span>)
+            </code>
+        </div> 
+    </div>
+    <br><hr><br>
+    <ul>
+        <li><code><span class="lb">upper</span>()</code></li>
+    </ul>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">str</span> = "This WAS lowercase" <br>
+                print(<span class="lb">str</span>.<span class="lb">upper</span>())
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>THIS WAS LOWERCASE</code>
+            </div>
+        </div> 
+    </div>
+    <br><hr><br>
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2 tabindex="2">format </h2>
+            <p>You can pass values from format into strings, in order</p>
+            <code>
+                <span class="lb">x</span> = <span class="o">"Two values {} {}"</span>.<span class="lb">format</span>(3,7)
+                <br> print(<span class="lb">x</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>Two values 3 7</code>
+            </div>
+            <br><hr>
+        </div>
+        <div class="flex-item">
+            <br>
+            <p> OR, You can pass multiple values in format by their indexs!</p>
+            <code>
+                <span class="lb">x</span> = "Two values {1} {0}".<span class="lb">format</span>(3,7) <br>
+                print(<span class="lb">x</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>Two values 7 3</code>
+            </div>
+            <br><hr>
+        </div> 
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <br>
+            <h2>adjust their position</h2>
+            <p>{1:&lt;9} will left adjust 9 spaces and {0:>9} will right adjust 9 spaces</p> 
+            <code tabindex="2">
+                <span class="lb">x</span> = <span class="o">"Two values {1:>9} {0:>9}"</span>.<span class="lb">format</span>.(3,7)
+                <br> print(<span class="lb">x</span>)
+            </code>
+            <div tabindex="2" class="result">
+                <h3>Result</h3>
+                <pre >Two values 7                 3</pre>
+            </div>
+        </div>
+        <div class="flex-item">
+            <h3>Leading 0s</h3>
+            <p>{1:&lt;09} and {0:0>9} will add 0's</p> 
+            <code tabindex="2">
+                <span class="lb">x</span> = <span class="o">'Two values "{1:>09} "{0:>09}'</span>.<span class="lb">format</span>.(3,7)
+                <br> print(<span class="lb">x</span>)
+            </code>
+            <div tabindex="2" class="result">
+                <h3>Result</h3>
+                <pre >Two values "700000000" "000000003"</pre>
+            </div>
+        </div>
+    </div>
+    <h2>f string format</h2>
+    <p>final example, put f string in variable</p>
+    <code>
+        <span class="lb">x</span> = 5 <br>
+        <span class="lb">y</span> = 9 <br>
+        <span class="lb">str</span> = f"Two values {x} {y}"
+    </code>
+    
+    
+    
+    
+
+    
+</body>
+</html>

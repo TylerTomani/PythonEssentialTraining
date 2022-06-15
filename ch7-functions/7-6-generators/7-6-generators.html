@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-6-generators</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>7-6-generators</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Im not sure how this works quite yet but it seems useful</p>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp; <span class="lb">for</span> i in <span class="lb">range</span>(25): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(i, end=" ")
+            </code>
+        </div>
+        <div class="flex-item result b-dash">
+            <p>this alone would product the numbers 0 to 24 on a single line b/c of <span class="code">end=" "</span></p>
+            <code class="result">0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 ... 24</code>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>The inclusive range allows us to loop through numbers in a specified way</p>
+            <p>We structure so it allows for three 1 to three arguements <br>
+            <span class="r">I am confused why stop in declared within else while start and step are not</span></p>
+            <br>
+            <code>
+                &emsp;&emsp;&emsp;<span class="lb">for</span> x in <span class="lb">inclusive_range</span>(25) <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(x, end=" ") <br> 
+                <br>
+                <span class="b">def</span> <span class="lb">inclusive_range</span>(*args):
+                
+            </code>
+        </div>
+    </div>
+    <h3>Not working, broken code below</h3>
+    <pre>
+        def main():
+        # r = int(input("Enter range: "))
+        # for i in range(int(r)):
+        #     print(f"{i}", end=" ")
+    
+        for x in inclusive_range(10):
+            print(x, end=" ")
+        print()
+    
+    
+    def inclusive_range(*args):
+        numargs = len(args)
+        start = 0
+        step = 1
+    # // initlialize parameters
+        if numargs &lt; 1:
+            raise TypeError("Not enough arguments: 1-3")
+        elif numargs == 1:
+            stop = args[0]
+        elif numargs == 2:
+            (start, stop) = args  # will format so 2nd parameter is stop
+        elif numargs == 3:
+            (start, stop, step) = args
+        else:
+            raise TypeError("too many arguments: 1-3")
+    # // Generator
+        i = start
+        while i &lt;= stop:
+            yield 1
+            i += step
+    
+    
+    if __name__ == '__main__':
+        main()
+        
+    </pre>
+    <footer tabindex="2"></footer>
+    
+    
+</body>
+</html>

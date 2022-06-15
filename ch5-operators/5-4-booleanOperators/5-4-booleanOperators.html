@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-4-booleanOperators</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+    <link rel="stylesheet" href="../../css/slides.css">
+
+    
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>5-4-booleanOperators</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>and</td>
+                        <td>And</td>
+                    </tr>
+                    <tr>
+                        <td>or</td>
+                        <td>Or</td>
+                    </tr>
+                    <tr>
+                        <td>not</td>
+                        <td>Not</td>
+                    </tr>
+                    <tr>
+                        <td>in</td>
+                        <td>Value in set</td>
+                    </tr>
+                    <tr>
+                        <td>not in</td>
+                        <td>Value not in set</td>
+                    </tr>
+                    <tr>
+                        <td>is</td>
+                        <td>Same object Identity</td>
+                    </tr>
+                    <tr>
+                        <td>is not</td>
+                        <td>Not same object Indentity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div  class="flex-item">
+            <code>
+                <span class="lb">a = True</span> <br>
+                <span class="lb">b = False</span> <br>
+                <span class="lb">x = (</span> <span class="o">'bear' , 'bunny', 'tree', 'sky', 'rain'</span>) <br>
+                <span class="lb">y = </span> <span class="o">'bear'</span> <br>
+                <br>
+                <span class="ldb">if</span> a and b: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is true'</span>) <br>
+                <span class="ldb">else</span>: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is false'</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>expression is false</code>
+            </div>
+        </div>
+        <div  class="flex-item">
+            <code>
+                <span class="lb">a = True</span> <br>
+                <span class="lb">b = False</span> <br>
+                <span class="lb">x = (</span> <span class="o">'bear' , 'bunny', 'tree', 'sky', 'rain'</span>) <br>
+                <span class="lb">y = </span> <span class="o">'bear'</span> <br>
+                <br>
+                <span class="ldb">if</span> a or b: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is true'</span>) <br>
+                <span class="ldb">else</span>: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is false'</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>expression is true</code>
+            </div>
+        </div>
+    </div>
+    <br> <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <code>
+                <span class="lb">a = True</span> <br>
+                <span class="lb">b = False</span> <br>
+                <span class="lb">x = (</span> <span class="o">'bear' , 'bunny', 'tree', 'sky', 'rain'</span>) <br>
+                <span class="lb">y = </span> <span class="o">'bear'</span> <br>
+                <br>
+                <span class="ldb">if</span> y in x: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is true'</span>) <br>
+                <span class="ldb">else</span>: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is false'</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>expression is true</code>
+            </div>
+        </div>
+        <div class="flex-item">
+            <code>
+                <span class="lb">a = True</span> <br>
+                <span class="lb">b = False</span> <br>
+                <span class="lb">x = (</span> <span class="o">'bear' , 'bunny', 'tree', 'sky', 'rain'</span>) <br>
+                <span class="lb">y = </span> <span class="o">'bear'</span> <br>
+                <br>
+                <span class="ldb">if</span> y in x[0]: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is true'</span>) <br>
+                <span class="ldb">else</span>: <br>
+                &emsp;&emsp;&emsp;<span class="lb">print</span>(<span class="o">'expression is false'</span>)
+            </code>
+            <div class="result">
+                <h3>Result</h3>
+                <code>expression is true</code>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

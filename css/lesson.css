@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    margin: 1%;
+}
+p {
+    font-size: 1.2rem;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 50%;
+    gap: 5%;
+    /* justify-content:; */
+}
+.chapter {
+    margin-top: 1rem;
+}
+.ul-inline{
+    display: inline;
+    margin-left: 10%;
+}
+.result{
+    margin: 1% 0;
+    min-width: 500px;
+}
+.result > code,.result > p > code, .result{
+    background: black;
+    color: whitesmoke;
+    font-family: monospace;
+    display: inline-block;
+    margin-top: 1%;
+    padding: 0 2%;
+}
+code {
+    font-size: 1.15rem;
+}
+.b-dash {
+    border: 2px dashed black;
+    padding: 1.5%;
+}
+/* Colors */
+.bv {
+    border: 4px solid violet;
+    font-size: 1.4rem;
+    /* padding: 0 .5%; */
+}
+.uv {
+    text-decoration: underline violet;
+
+    font-size: 1.4rem;
+    /* padding: 0 .5%; */
+}
+.ldb {
+    color:steelblue;
+}
+.lb {
+    color: darkcyan;
+}
+.do {
+    color: darkorange;
+} 
+.o {
+    color:chocolate;
+}
+.r {
+    color: orangered;
+}
+.red {
+    color: red;
+}
+.b {
+    color:blue;
+}

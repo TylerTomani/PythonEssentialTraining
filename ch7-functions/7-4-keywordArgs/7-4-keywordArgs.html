@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-4-keywordArgs</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+    <h1>7-4-keywordArgs</h1>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>To access key value pairs from a dictionary you must use double asterisk **</p>
+            <p>It is conventions to label the args <code>**kvargs</code></p>
+            <br>
+            <hr>
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">animals</span>(Cow="moo", Pig="oink", Cat="meow", Dog="woof") <br>
+                <br>
+                <span class="b">def</span> animals(**kvargs): <br>
+                &emsp;&emsp;&emsp;if <span class="lb">len</span>(kvargs): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for <span class="lb">k</span> in kvargs: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="r">f</span><span class="o">"key: {<span class="lb">k</span>} value: {kvargs[<span class="lb">k</span>]}"</span>) <br>
+                &emsp;&emsp;&emsp;else: print("Empty")
+                <br><br>
+                if __name__ == '__main__':
+                    main()     
+            </code>
+        </div>
+        <div class="result">
+            <h3>result</h3>
+            <code>
+                key: Cow value: moo <br>
+                key: Pig value: oink <br>
+                key: Cat value: meow <br>
+                key: Dog value: woof <br>
+            </code>
+        </div>
+    </div>
+    <br> <hr>
+    <div class="flex-container">
+        <div class="flex-item">
+            <p>Above, we type out the dictionary as an argument to the function, but we can assign the dict to a varaible, <br>
+            then pass the variable to the function using double asterisk **. <br>
+            This will produce the same result as above</p>
+            
+            <br>
+
+            <code>
+                <span class="b">def</span> main(): <br>
+                &emsp;&emsp;&emsp;<span class="lb">x</span> = <span class="lb">dict</span>(Cow="moo", Pig="oink", Cat="meow", Dog="woof") <br>
+                &emsp;&emsp;&emsp;<span class="lb">animals</span>(<span class="bv">**<span class="lb">x</span></span>) <br>
+                <br>
+                <span class="b">def</span> animals(**kvargs): <br>
+                &emsp;&emsp;&emsp;if <span class="lb">len</span>(kvargs): <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;for <span class="lb">k</span> in kvargs: <br>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;print(<span class="r">f</span><span class="o">"key: {<span class="lb">k</span>} value: {kvargs[<span class="lb">k</span>]}"</span>) <br>
+                &emsp;&emsp;&emsp;else: print("Empty")
+                <br><br>
+                if __name__ == '__main__':
+                    main()     
+            </code>
+        </div>
+    </div>
+    
+    
+    
+    
+</body>
+</html>

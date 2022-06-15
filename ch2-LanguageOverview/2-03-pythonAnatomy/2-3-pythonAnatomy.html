@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-3-pythonAnatomy</title>
+    <link rel="stylesheet" href="../../css/lesson.css">
+    <script src="../../js/copytext.js" defer></script>
+</head>
+<body>
+    <a tabindex="1" href="../../pythonEssentialTraining.html">home</a>
+
+    <h1>2-3-pythonAnatomy</h1>
+    <p>Include shebeng line to ensure python runs from the correct Path</p>
+    <p>Use eiter 
+        <ul>
+            <li>#!/usr/bin/python3</li>
+            <li>#!/usr/bin/env python3 - this uses the env command to find python</li>
+        </ul>
+    </p>
+    <hr>
+    <div class="flex-container">
+        <div class="cpyText" tabindex="2" class="flex-item">
+            <code >
+                #!/usr/bin/env python3 <br><br>
+                <span class="ldb">import</span> <span class="lb">platform</span> <br>
+                <br>
+                print('<span class="o">This is python version {}</span> '.<span class="ldb">format(platform.python_version())</span> )
+            </code>
+        </div>
+
+        <div class="result">
+            <h3>Result</h3>
+            <code>This is python version 3.10.2</code>
+        </div>
+
+    </div>
+</body>
+</html>
